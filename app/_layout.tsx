@@ -27,6 +27,7 @@ export default function RootLayout() {
         <Stack.Screen name="insights/[itemId]" options={{ title: 'Insights' }} />
         <Stack.Screen name="payment/new" options={{ title: 'Novo PIX' }} />
         <Stack.Screen name="payment/[requestId]" options={{ title: 'Status do PIX' }} />
+        <Stack.Screen name="favorites" options={{ title: 'Favoritos' }} />
       </Stack>
     </QueryClientProvider>
   );

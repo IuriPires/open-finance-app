@@ -131,6 +131,14 @@ export type InsightsResponse = {
   categories: CategoryAggregate[];
 };
 
+export type Favorite = {
+  id: string;
+  label: string;
+  amount: number;
+  description: string;
+  createdAt: string;
+};
+
 export type IdentitySummary = {
   fullName: string | null;
   document: string | null;
@@ -185,6 +193,14 @@ export const api = {
     http<InsightsResponse>(
       `/api/items/${id}/insights${month ? `?month=${month}` : ''}`,
     ),
+  listFavorites: () => http<{ favorites: Favorite[] }>('/api/favorites'),
+  addFavorite: (body: { label: string; amount: number; description?: string }) =>
+    http<{ favorite: Favorite }>('/api/favorites', {
+      method: 'POST',
+      body: JSON.stringify(body),
+    }),
+  removeFavorite: (id: string) =>
+    http<{ ok: true }>(`/api/favorites/${id}`, { method: 'DELETE' }),
   createPayment: (body: { amount: number; description?: string }) =>
     http<CreatePaymentResponse>('/api/payments', {
       method: 'POST',

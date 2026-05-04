@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "Pluggy POC",
+    "slug": "pluggy-poc",
+    "scheme": "pluggypoc",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "bundleIdentifier": "com.pluggypoc.app",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.pluggypoc.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-web-browser"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
